@@ -6,7 +6,7 @@
 /*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 13:29:50 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/02 15:44:45 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/02 18:48:50 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ int ft_putstr_c(char *str)
 	int i;
 
 	i = 0;
-	while (str[i])
+	while (str[i] != '\0')
 	{
 		write (1, &str[i], 1);
 		i++;
 	}
 	
-		write (1, '\0', 1);
+		write (1, "\0", 1);
 	return (i);
 }
 char	*c_toa(char c)
@@ -64,6 +64,11 @@ va_list ap;
 				a += ft_putstr_c(ft_itoa_u(va_arg(ap, unsigned int)));
 				i++;
 			}
+			if (format[i] == 'x' || format[i] == 'X' || format[i] == 'p')
+			{
+				a+= ft_putstr_c(format[i] == 'x' ? ft_hex(va_arg(ap, unsigned int), 0) : ft_hex(va_arg(ap, unsigned int), 32));
+				i++;
+			}
 		}	
 		write (1,&format[i],1);
 		a = i++;
@@ -75,7 +80,7 @@ va_list ap;
 
 int    main(void)
 {
-	printf("\n%d\n", ft_printf("hello c:(%c) s:(%s) d:(%d) u:(%u) ",'m' ,"ayoub", 1998, 4294967295));
+	ft_printf("hello c:(%c) s:(%s) d:(%d) u:(%u) x:(%x) ",'m' ,"ayoub", 1998, 4294967295, 1000);
 	return (0);
 }
 
