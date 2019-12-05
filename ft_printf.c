@@ -6,7 +6,7 @@
 /*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 13:29:50 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/03 21:44:20 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/05 15:39:41 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,14 +69,3 @@ va_list ap;
 	}
 	return (a);
 }
-
-
-
-int    main(void)
-{
-	char a;
-	printf("%%c\n",'m');
-	ft_printf("%%c\n",'m');
-	return (0);
-}
-
