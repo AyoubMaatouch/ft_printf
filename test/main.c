@@ -6,7 +6,7 @@
 /*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 15:51:14 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/06 13:44:43 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/06 18:17:10 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int    main(void)
 {
-	//ft_printf("%10c\n", 'a');
-	printf("%10c\n", 'a');
-	printf("%10-c\n", 'a');
+	ft_printf("%c%c %c\n", 'a','b', "ayoub");
 	return (0);
 }
 

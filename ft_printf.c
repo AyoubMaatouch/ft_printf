@@ -6,7 +6,7 @@
 /*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 13:29:50 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/05 15:50:35 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/06 18:18:33 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,15 @@ char	*c_toa(char c)
 
 int	ft_printf(const char *format, ...)
 {
-int i, a;
-va_list ap;
-
+	int i, a;
+	//va_list ap;
+	struct flags s1;
 	i  = 0;
 	a = 0;
-	va_start(ap, format);
-	ft_conv(format, ap);
-	va_end(ap);	
+
+	va_start(s1.ap, format);
+	//va_copy(s1.ap, ap);
+	ft_conv(format, s1);
+	va_end(s1.ap);	
 	return (a);
 }
