@@ -6,11 +6,11 @@
 #    By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/05 15:26:00 by aymaatou          #+#    #+#              #
-#    Updated: 2019/12/05 15:41:08 by aymaatou         ###   ########.fr        #
+#    Updated: 2019/12/06 11:18:03 by aymaatou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf
+NAME = libftprintf.a
 
 SRC = *.c
 OBJ = *.o

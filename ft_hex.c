@@ -6,7 +6,7 @@
 /*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 16:29:19 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/03 21:44:23 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/06 12:01:53 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,9 @@ char	*ft_hex(unsigned long nb, int maj, int p)
 		nb /= 16;
 		i++;
 	} 
-	ret[i] = hex[nb];
+	if (maj == 32)
+		ret[i] = hex[nb] - 32;
+	else
+		ret[i] = hex[nb];
 	return (ft_rev(ret, p));
 }
