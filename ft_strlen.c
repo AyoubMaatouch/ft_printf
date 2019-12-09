@@ -6,13 +6,13 @@
 /*   By: aymaatou <aymaatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 12:17:36 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/06 17:33:22 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/09 18:46:25 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_strlen(char *str)
 {
 	size_t i;
 
