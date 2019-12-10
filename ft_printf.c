@@ -6,24 +6,34 @@
 /*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 13:29:50 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/07 22:09:56 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/10 18:09:50 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putstr_c(char *str)
+int ft_putstr_c(char *str, int index)
 {
 	int i;
 
 	i = 0;
-	while (str[i] != '\0')
+	if (!index)
 	{
-		write (1, &str[i], 1);
-		i++;
+		while (str[i] != '\0')
+		{
+			write (1, &str[i], 1);
+			i++;
+		}
 	}
-	
-		write (1, "\0", 1);
+	if (index)
+	{
+		while (i < index &&str[i] != '\0')
+		{
+			write (1, &str[i], 1);
+			i++;
+		}
+	}
+	write (1, "\0", 1);
 	return (i);
 }
 char	*c_toa(char c)
@@ -40,11 +50,11 @@ int	ft_printf(const char *format, ...)
 {
 	int i, a;
 	va_list ap;
-	struct flags s1;
+	struct s_flags s1;
 	i  = 0;
 	a = 0;
 
-	
+
 	va_start(ap, format);
 	va_copy(s1.ap, ap);
 	ft_conv(format, s1);

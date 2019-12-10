@@ -6,12 +6,12 @@
 /*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 15:46:13 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/07 22:09:50 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/10 14:49:52 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-void	ft_conv(const char *format, struct flags s1)
+void	ft_conv(const char *format, struct s_flags s1)
 {
 	int i;
 
@@ -21,10 +21,10 @@ void	ft_conv(const char *format, struct flags s1)
 		if (format[i] == '%')
 		{
 			i++;
-			s1 = ft_flag((char*)format + i, s1);
+			s1 = ft_flag((char*)format + i, s1, s1.ap);
 			i+= s1.i;	
 			if (format[i] == 'c' || format[i] == 's')
-				ft_charstr(s1.ap, s1, format[i]);
+				format[i] == 'c' ? ft_char(s1.ap, s1) : ft_str(s1.ap, s1);
 			else if (format[i] == 'd' || format[i] == 'i')
 				ft_putdigit(s1.ap, 'd');
 			else if (format[i] == 'u')
