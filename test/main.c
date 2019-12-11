@@ -6,7 +6,7 @@
 /*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 15:51:14 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/10 18:41:17 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/11 19:01:02 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #include <stdio.h>
 int    main(void)
 {
-	printf("|%-10.1s|\n", "salut");
-	ft_printf("|%-10.1s|\n", "salut");	
+	int a;
+	a = printf("%10c", '\0');
+	printf("|\n%d\n", a);
 	return (0);
 }
 

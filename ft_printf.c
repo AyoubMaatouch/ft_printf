@@ -6,7 +6,7 @@
 /*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 13:29:50 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/10 18:09:50 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/11 14:12:27 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int ft_putstr_c(char *str, int index)
 			i++;
 		}
 	}
-	write (1, "\0", 1);
 	return (i);
 }
 char	*c_toa(char c)

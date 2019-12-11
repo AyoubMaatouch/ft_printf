@@ -6,7 +6,7 @@
 /*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 14:41:33 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/10 18:19:19 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/11 14:05:07 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,4 @@ void	ft_puthex(va_list ap, char sep);
 int		ft_strlen(char *str);
 int		ft_pspace(int value);
 struct	s_flags ft_flag(char *format, struct s_flags s1, va_list ap);
+int		ft_final_len(char *s, struct s_flags s1);
