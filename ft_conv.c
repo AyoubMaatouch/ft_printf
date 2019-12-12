@@ -6,7 +6,7 @@
 /*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 15:46:13 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/10 14:49:52 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/12 17:58:42 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -26,9 +26,9 @@ void	ft_conv(const char *format, struct s_flags s1)
 			if (format[i] == 'c' || format[i] == 's')
 				format[i] == 'c' ? ft_char(s1.ap, s1) : ft_str(s1.ap, s1);
 			else if (format[i] == 'd' || format[i] == 'i')
-				ft_putdigit(s1.ap, 'd');
+				ft_putdigit(s1.ap, s1, 'd');
 			else if (format[i] == 'u')
-				ft_putdigit(s1.ap, 'u');
+				ft_putdigit(s1.ap, s1, 'u');
 			else if (format[i] == 'x' || format[i] == 'X')
 				ft_puthex(s1.ap, format[i]);
 			else if (format[i] == 'p')

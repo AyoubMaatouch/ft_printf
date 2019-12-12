@@ -6,7 +6,7 @@
 /*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 13:55:30 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/10 18:25:04 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/12 20:20:57 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,15 @@ struct s_flags ft_flag(char *format, struct s_flags s1, va_list ap)
 	s1.width = 0;
 	s1.mins = 0;
 	s1.prec = 0;
+	s1.zero = 0;
 	if (format[i] == '-')
 	{
 		s1.mins = 1;
+		i++;
+	}
+	while (ft_isdigit(format[i]) && ft_atoi(c_toa(format[i])) == 0)
+	{
+		s1.zero = 1;
 		i++;
 	}
 	if (format[i] == '*')
@@ -66,6 +72,20 @@ int	ft_pspace(int value)
 	while (value)
 	{
 		write(1, " ", 1);
+		i++;
+		value--;
+	}
+	return (i);
+}
+
+
+int	ft_pzero(int value)
+{
+	static int i;
+
+	while (value)
+	{
+		write(1, "0", 1);
 		i++;
 		value--;
 	}
