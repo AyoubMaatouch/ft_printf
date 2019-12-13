@@ -6,12 +6,12 @@
 /*   By: aymaatou <aymaatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 15:46:13 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/13 16:37:19 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/13 21:28:45 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-
+#include <stdio.h>
 void	ft_conv(const char *format, struct s_flags s1)
 {
 	int i;
@@ -23,7 +23,10 @@ void	ft_conv(const char *format, struct s_flags s1)
 		{
 			i++;
 			s1 = ft_flag((char*)format + i, s1, s1.ap);
+			printf("s1.i  value |%d|", s1.i);
+			printf(" i 1 value |%d|", i);
 			i+= s1.i;	
+			printf("i 2 value |%d|", i);
 			if (format[i] == 'c' || format[i] == 's')
 				format[i] == 'c' ? ft_char(s1.ap, s1) : ft_str(s1.ap, s1);
 			else if (format[i] == 'd' || format[i] == 'i')

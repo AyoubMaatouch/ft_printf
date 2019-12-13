@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 11:38:38 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/13 16:33:28 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/13 20:34:12 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	ft_putdigit(va_list ap, struct s_flags s1,  char sep)
 	if (sep == 'd')
 	{
 		value = va_arg(ap, int);
-		if (value < 0)
+		if (value < 0 && s1.zero)
 		{
-			value  = value * -1;
+			value  = (unsigned int)value * -1;
 			digit = ft_itoa(value);
 			len = ft_strlen(digit) + 1;
 			ft_putchar('-');

@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 11:49:51 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/13 15:35:59 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/13 21:29:48 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_puthex(va_list ap, char sep)
 	if (sep == 'x')
 		ft_putstr_c(ft_hex(va_arg(ap, unsigned int), 0, 0), 0);
 	else if (sep == 'X') 
-		ft_putstr_c(ft_hex(va_arg(ap, unsigned int), 32, 0), 0);
+		ft_putstr_c(ft_hex(va_arg(ap, unsigned long), 32, 0), 0);
 	else
 		ft_putstr_c(ft_hex(va_arg(ap, unsigned long), 0, 1), 0);
 			

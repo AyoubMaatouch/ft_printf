@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aymaatou <aymaatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 15:18:40 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/13 16:36:20 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/13 21:24:32 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@
 int    main(void)
 {
 	int a = 0, b = 0;
-
-	a = ft_printf("ft %010d\n", -10);
-	b = printf("pr %010d\n", -10);
+	a = ft_printf("ft %X\n",100);
+	b = printf("pr %X\n", 100);
 	
 	printf ("|%d| |%d| ", a, b);
+//	printf("%s\n",ft_itoa_u(4294967295));
+//	printf("%s\n",ft_itoa_u(0));
 	return (0);
 }
 
