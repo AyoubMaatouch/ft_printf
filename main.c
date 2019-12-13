@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/06 11:49:51 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/10 18:22:52 by aymaatou         ###   ########.fr       */
+/*   Created: 2019/12/13 15:18:40 by aymaatou          #+#    #+#             */
+/*   Updated: 2019/12/13 16:36:20 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#include <stdio.h>
 #include "ft_printf.h"
 
-void	ft_puthex(va_list ap, char sep)
+int    main(void)
 {
-	if (sep == 'x')
-		ft_putstr_c(ft_hex(va_arg(ap, unsigned int), 0, 0), 0);
-	else if (sep == 'X') 
-		ft_putstr_c(ft_hex(va_arg(ap, unsigned int), 32, 0), 0);
-	else
-		ft_putstr_c(ft_hex(va_arg(ap, unsigned long), 0, 1), 0);
-			
+	int a = 0, b = 0;
+
+	a = ft_printf("ft %010d\n", -10);
+	b = printf("pr %010d\n", -10);
+	
+	printf ("|%d| |%d| ", a, b);
+	return (0);
 }
+

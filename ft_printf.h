@@ -6,7 +6,7 @@
 /*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 14:41:33 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/12 21:10:34 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/13 16:22:44 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ struct	s_flags {
 	int prec;
 	int zero;
 };
-
+int		g_count;
 int		ft_printf(const char *format, ...);
 int		ft_atoi(const char *str);
 int		ft_isdigit(int str);

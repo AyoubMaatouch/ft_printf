@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aymaatou <aymaatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/05 15:51:14 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/12 21:13:59 by aymaatou         ###   ########.fr       */
+/*   Created: 2019/12/06 11:49:51 by aymaatou          #+#    #+#             */
+/*   Updated: 2019/12/13 15:35:59 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-#include <stdio.h>
-int    main(void)
-{
-	printf("pr|%12u|\n", -10);
-	ft_printf("ft|%12u|\n", -10);
-	return (0);
-}
 
+void	ft_puthex(va_list ap, char sep)
+{
+	if (sep == 'x')
+		ft_putstr_c(ft_hex(va_arg(ap, unsigned int), 0, 0), 0);
+	else if (sep == 'X') 
+		ft_putstr_c(ft_hex(va_arg(ap, unsigned int), 32, 0), 0);
+	else
+		ft_putstr_c(ft_hex(va_arg(ap, unsigned long), 0, 1), 0);
+			
+}

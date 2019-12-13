@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_charstr.c                                       :+:      :+:    :+:   */
+/*   ft_cs_conv.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aymaatou <aymaatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/05 17:22:25 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/11 13:58:56 by aymaatou         ###   ########.fr       */
+/*   Created: 2019/12/13 15:10:42 by aymaatou          #+#    #+#             */
+/*   Updated: 2019/12/13 15:36:03 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <stdio.h>
-#include <string.h>
+#include "../ft_printf.h"
+
 void	ft_char(va_list ap, struct s_flags s1)
 {
 	if (s1.width > 1 && s1.mins == 0)

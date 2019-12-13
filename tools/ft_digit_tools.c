@@ -1,16 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_digit_tools.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aymaatou <aymaatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 22:14:35 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/02 16:28:29 by aymaatou         ###   ########.fr       */
+/*   Created: 2019/12/13 12:46:46 by aymaatou          #+#    #+#             */
+/*   Updated: 2019/12/13 15:27:44 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
+
+int	ft_isdigit(int str)
+{
+	if (str >= 48 && str <= 57)
+	{
+		return (1);
+	}
+	return (0);
+}
 
 static unsigned int	ft_alloc(unsigned int nb, int nbr)
 {

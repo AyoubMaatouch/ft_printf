@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_tools.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aymaatou <aymaatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/12 17:56:13 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/06 17:35:43 by aymaatou         ###   ########.fr       */
+/*   Created: 2019/12/13 12:42:37 by aymaatou          #+#    #+#             */
+/*   Updated: 2019/12/13 15:27:41 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+
+#include "../ft_printf.h"
 
 int		ft_atoi(const char *str)
 {
@@ -39,4 +40,38 @@ int		ft_atoi(const char *str)
 		number = number * 10 + (str[i++] - 48);
 	}
 	return (number * sign);
+}
+
+int	ft_strlen(char *str)
+{
+	size_t i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+int	ft_final_len(char *s, struct s_flags s1)
+{
+	int len;
+
+	len = 0;
+	if (s1.prec && s1.prec < ft_strlen(s))
+	{
+		len = s1.width - s1.prec;
+	}	
+	else
+		len = s1.width - ft_strlen(s);
+	return (len);
+}
+
+char	*c_toa(char c)
+{
+	char *ret;
+
+	ret = malloc(sizeof(char) + 1);
+	ret[0] = c;
+	ret[1] = '\0';
+	return (ret);
 }

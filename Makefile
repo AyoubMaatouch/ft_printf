@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: aymaatou <aymaatou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/05 15:26:00 by aymaatou          #+#    #+#              #
-#    Updated: 2019/12/06 11:18:03 by aymaatou         ###   ########.fr        #
+#    Updated: 2019/12/13 15:36:31 by aymaatou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ LB = ar rc
 all : $(NAME)
 
 $(NAME):
-	@$(CC) -c $(SRC)
+	@$(CC) -c $(SRC) ./tools/$(SRC) ./src/$(SRC)
 	@$(LB) $(NAME) $(OBJ)
 
 clean :

@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_conv.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aymaatou <aymaatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 15:46:13 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/12 17:58:42 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/13 16:37:19 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_printf.h"
+
+#include "../ft_printf.h"
 
 void	ft_conv(const char *format, struct s_flags s1)
 {
@@ -34,10 +35,10 @@ void	ft_conv(const char *format, struct s_flags s1)
 			else if (format[i] == 'p')
 				ft_puthex(s1.ap, 'p');
 			else
-				write (1,&format[i],1);
+				ft_putchar(format[i]);
 			}
 		else
-			write (1,&format[i],1);
+			ft_putchar(format[i]);
 	i++;
 	}
 }

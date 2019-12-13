@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aymaatou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aymaatou <aymaatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 13:55:30 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/12 20:20:57 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/13 16:35:03 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 struct s_flags ft_flag(char *format, struct s_flags s1, va_list ap)
 {
@@ -67,12 +67,14 @@ struct s_flags ft_flag(char *format, struct s_flags s1, va_list ap)
 
 int	ft_pspace(int value)
 {
-	static int i;
+	 int i;
 
+	i = 0;
 	while (value)
 	{
 		write(1, " ", 1);
 		i++;
+		g_count++;
 		value--;
 	}
 	return (i);
@@ -81,12 +83,14 @@ int	ft_pspace(int value)
 
 int	ft_pzero(int value)
 {
-	static int i;
+	 int i;
 
+	i = 0;
 	while (value)
 	{
 		write(1, "0", 1);
 		i++;
+		g_count++;
 		value--;
 	}
 	return (i);
