@@ -45,7 +45,7 @@ char	*ft_hex(unsigned long nb, int maj, int p)
 	int i;
 
 	i = 0;
-	ret = malloc(sizeof(char) * 20);
+	ret = malloc(sizeof(char) * 20 + 1);
 	while (nb >= 16)
 	{
 		if ((nb % 16) > 9 && maj == 32) 
@@ -55,9 +55,11 @@ char	*ft_hex(unsigned long nb, int maj, int p)
 		nb /= 16;
 		i++;
 	} 
-	if (maj == 32)
+	if (maj == 32 && nb > 9)
 		ret[i] = hex[nb] - 32;
 	else
 		ret[i] = hex[nb];
+	ret[++i] = '\0';
+	//ft_rev(ret, p);
 	return (ft_rev(ret, p));
 }

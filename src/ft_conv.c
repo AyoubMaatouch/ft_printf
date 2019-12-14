@@ -23,10 +23,7 @@ void	ft_conv(const char *format, struct s_flags s1)
 		{
 			i++;
 			s1 = ft_flag((char*)format + i, s1, s1.ap);
-			printf("s1.i  value |%d|", s1.i);
-			printf(" i 1 value |%d|", i);
-			i+= s1.i;	
-			printf("i 2 value |%d|", i);
+			i+= s1.i;
 			if (format[i] == 'c' || format[i] == 's')
 				format[i] == 'c' ? ft_char(s1.ap, s1) : ft_str(s1.ap, s1);
 			else if (format[i] == 'd' || format[i] == 'i')

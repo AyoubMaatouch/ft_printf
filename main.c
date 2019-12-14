@@ -17,8 +17,8 @@
 int    main(void)
 {
 	int a = 0, b = 0;
-	a = ft_printf("ft %X\n",100);
-	b = printf("pr %X\n", 100);
+	a = ft_printf("ft %s\n", "%15d");
+	b = printf("pr %s\n", "%15d");
 	
 	printf ("|%d| |%d| ", a, b);
 //	printf("%s\n",ft_itoa_u(4294967295));
