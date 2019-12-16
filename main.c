@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 15:18:40 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/14 14:59:11 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/16 14:50:06 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 int    main(void)
 {
 	int a = 0, b = 0;
-	a = ft_printf("|%4d|", 100);
+	a = ft_printf("|%1.0d|", 0);
 		puts("\n");
-	b = printf("|%4d|", 100);
+	b = printf("|%1.0d|", 0);
 	
 	printf ("\n|%d| |%d| ", a, b);
 //	printf("%s\n",ft_itoa_u(4294967295));

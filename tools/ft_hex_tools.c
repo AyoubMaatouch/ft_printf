@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 12:48:31 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/13 15:27:43 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/16 14:30:06 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,5 @@ char	*ft_hex(unsigned long nb, int maj, int p)
 	else
 		ret[i] = hex[nb];
 	ret[++i] = '\0';
-	//ft_rev(ret, p);
 	return (ft_rev(ret, p));
 }

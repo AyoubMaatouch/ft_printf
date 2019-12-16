@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 15:10:42 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/14 14:36:10 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/16 15:45:35 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	ft_char(va_list ap, struct s_flags s1)
 {
 	if (s1.width > 1 && s1.mins == 0)
 		ft_pspace(s1.width - 1);
-	ft_putstr_c(c_toa(va_arg(ap, int)), s1.prec);
+	//ft_putstr_c(c_toa(va_arg(ap, int)), s1.prec);
+	ft_putchar(va_arg(ap, int));
 	if (s1.width > 1 && s1.mins == 1)
 		ft_pspace(s1.width - 1);
 }

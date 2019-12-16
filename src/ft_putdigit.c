@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 11:38:38 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/14 15:01:14 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/16 15:42:10 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	ft_putdigit(va_list ap, struct s_flags s1,  char sep)
 {
 	char	*digit;
 	int		i;
+	int		j;
 	int		value;
 	int		len;
 	if (sep == 'd')
@@ -33,10 +34,17 @@ void	ft_putdigit(va_list ap, struct s_flags s1,  char sep)
 			digit = ft_itoa(value);
 			len = ft_strlen(digit);
 		}
-		if ((i = s1.width - len) > 0 && s1.mins == 0)
-		   s1.zero == 0 ? ft_pspace(i) : ft_pzero(i);	
-		ft_putstr_c(digit, 0);
-		if ((i = s1.width - len) > 1 && s1.mins == 1)
+		if ((i = s1.prec - len) > 0)
+			{
+				j = s1.width - s1.prec;
+				if (j > 0)
+					ft_pspace(j);
+				ft_pzero(i);
+			}
+		else if ((i = s1.width - len) > 0 && s1.mins == 0)
+		  	 s1.zero == 0 ? ft_pspace(i) : ft_pzero(i);	
+		s1.prec <= 0 ? ft_putstr_c(digit, 0):ft_putstr_d(digit, s1.prec);
+		if ((i = s1.width - len) > 0 && s1.mins == 1)
 		   ft_pspace(i);	
 	}
 	else

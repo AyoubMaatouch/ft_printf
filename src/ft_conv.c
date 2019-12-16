@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 15:46:13 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/13 21:28:45 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/16 14:30:35 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	ft_conv(const char *format, struct s_flags s1)
 			else if (format[i] == 'u')
 				ft_putdigit(s1.ap, s1, 'u');
 			else if (format[i] == 'x' || format[i] == 'X')
-				ft_puthex(s1.ap, format[i]);
+				ft_puthex(s1.ap, format[i], s1);
 			else if (format[i] == 'p')
-				ft_puthex(s1.ap, 'p');
+				ft_puthex(s1.ap, 'p', s1);
 			else
 				ft_putchar(format[i]);
 			}
