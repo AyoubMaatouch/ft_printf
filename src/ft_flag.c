@@ -6,11 +6,18 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 13:55:30 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/16 16:07:55 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/16 21:21:08 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
+
+int ft_is_flag(char c)
+{
+	if (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i' || c == 'u' || c == 'x' || c == 'X')
+		return (1);
+	return (0);
+}
 
 struct s_flags ft_flag(char *format, struct s_flags s1, va_list ap)
 {
@@ -43,7 +50,7 @@ struct s_flags ft_flag(char *format, struct s_flags s1, va_list ap)
 		else
 			s1.width = value;
 		i++;
-		va_copy(s1.ap, ap);
+		//va_copy(s1.ap, ap);
 	}
 	if (ft_isdigit(format[i]))
 	{
@@ -54,12 +61,18 @@ struct s_flags ft_flag(char *format, struct s_flags s1, va_list ap)
 	if (format[i] == '.')
 	{
 		i++;
-		if (ft_isdigit(format[i]))
+		if (ft_isdigit(format[i]) && ft_atoi(&format[i]))
 		{
 			s1.prec = ft_atoi(c_toa(format[i++]));
 			while (ft_isdigit(format[i]))
 				s1.prec = (s1.prec * 10) + ft_atoi(c_toa(format[i++]));
 		}
+		else if (!ft_isdigit(format[i]) || ft_atoi(&format[i]) == 0)
+			{ 
+				s1.prec = -1;
+				if (!ft_is_flag(format[i]))
+					i++;
+			}
 	}
 	s1.i = i;
 	return (s1);
