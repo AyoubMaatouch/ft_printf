@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 14:41:33 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/17 17:29:18 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/18 15:52:35 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,3 +46,4 @@ int		ft_final_len(char *s, struct s_flags s1);
 int		ft_putchar(char c);
 int 	ft_putstr_d(char *str, int index);
 void	ft_putdigit_u(va_list ap, struct s_flags s1);
+int		ft_putstr_s(char *str, int index, int width);

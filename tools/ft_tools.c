@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 12:42:37 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/17 17:48:45 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/18 15:05:43 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int	ft_final_len(char *s, struct s_flags s1)
 	len = 0;
 	if (s1.prec && s1.prec < ft_strlen(s))
 	{
+		if (s1.prec == -1)
+			s1.prec = 0;
 		len = s1.width - s1.prec;
 	}	
 	else
