@@ -32,6 +32,13 @@ void	ft_str(va_list ap, struct s_flags s1)
 	s = va_arg(ap, char*);
 	if (!s)
 	{
+		if (!s1.width && s1.prec == -1)
+			ft_putstr_c("(null)", 0);
+		else
+		{
+		
+		
+			
 		len = ft_final_len("(null)", s1);
 	if ((len) > 0 && s1.mins == 0)
 		ft_pspace(len);
@@ -39,8 +46,13 @@ void	ft_str(va_list ap, struct s_flags s1)
 	if ((len) > 0 && s1.mins == 1)
 		ft_pspace(len);
 	}
+	}
 	else
 	{
+				if (!s1.width && s1.prec == -1)
+			ft_putstr_c(s, 0);
+		else
+{
 	len = ft_final_len(s, s1);
 	if ((len) > 0 && s1.mins == 0)
 		ft_pspace(len);
@@ -48,4 +60,5 @@ void	ft_str(va_list ap, struct s_flags s1)
 	if ((len) > 0 && s1.mins == 1)
 		ft_pspace(len);
 	}
+	 }
 }

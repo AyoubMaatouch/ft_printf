@@ -17,9 +17,9 @@
 int    main(void)
 {
 	int a = 0, b = 0;
-	a = ft_printf("|%4.3d|",-100);
+	a = ft_printf("|%.*s|", -5, "ABC");
 		puts("\n");
-	b = printf("|%4.3d|",-100);
+	b = printf("|%.*s|", -5, "ABC");
 	
 	printf ("\n|%d| |%d| ", a, b);
 //	printf("%s\n",ft_itoa_u(4294967295));
