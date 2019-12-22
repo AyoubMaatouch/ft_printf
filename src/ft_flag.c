@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 13:55:30 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/18 15:34:56 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/22 21:47:23 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ struct s_flags ft_flag(char *format, struct s_flags s1, va_list ap)
 	s1.mins = 0;
 	s1.prec = 0;
 	s1.zero = 0;
+	s1.isempty = 0;
 	if (format[i] == '-')
 	{
 		s1.mins = 1;
@@ -61,6 +62,8 @@ struct s_flags ft_flag(char *format, struct s_flags s1, va_list ap)
 	}
 	if (format[i] == '.')
 	{
+		if (!ft_isdigit(format[i - 1]) && format[i - 1] != '*' && !ft_isdigit(format[i + 1]) && format[i + 1] != '*')
+			s1.isempty = 1;
 		i++;
 		if (format[i] == '*')
 			{
