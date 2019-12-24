@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 13:55:30 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/22 21:47:23 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/24 15:08:24 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,15 +109,11 @@ int	ft_pspace(int value)
 
 int	ft_pzero(int value)
 {
-	 int i;
-
-	i = 0;
 	while (value)
 	{
 		write(1, "0", 1);
-		i++;
 		g_count++;
 		value--;
 	}
-	return (i);
+	return (1);
 }

@@ -6,7 +6,7 @@
 #    By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/05 15:26:00 by aymaatou          #+#    #+#              #
-#    Updated: 2019/12/18 16:41:51 by aymaatou         ###   ########.fr        #
+#    Updated: 2019/12/24 14:27:54 by aymaatou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,10 @@ $(NAME).a:
 	@$(LB) $(NAME).a $(OBJ)
 
 clean :
-	rm -fr $(OBJ)
+	@rm -fr $(OBJ)
 
 fclean : clean
-	rm -fr $(NAME).a
+	@rm -fr $(NAME).a
 
 re : fclean all
 

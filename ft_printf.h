@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 14:41:33 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/22 21:44:16 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/24 15:06:13 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ struct	s_flags {
 	int prec;
 	int zero;
 	int isempty;
+	int zeroPrinted;
 };
 int		g_count;
 int		ft_printf(const char *format, ...);
