@@ -6,12 +6,65 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 11:38:38 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/24 20:50:41 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/26 21:56:08 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 #include <stdio.h>
+
+// NEW FUNCTION
+
+void	ft_putdigit(va_list ap, struct s_flags s1,  char sep)
+{
+	int value = 0;
+	int len = 0;
+	int zero = 0;
+	int space = 0;
+	
+	if (sep == 'u')
+		ft_putdigit_u(ap, s1);
+	else
+	{
+
+	
+	value = va_arg(ap, int);
+	len = ft_strlen(ft_itoa(value));
+	if (s1.prec < 0)
+		s1.prec = 0;
+	if(s1.point && (s1.zero || s1.prec))
+			zero = s1.prec - len ;
+	if (s1.width)
+		{
+		if (zero)
+			space = value >= 0 ? s1.width - (zero + len) : s1.width - (zero + len + 1);
+		else
+			space = s1.width - len;
+		}
+	if (space && !s1.mins)
+		ft_pspace(space);
+	if (value < 0)
+		ft_putchar('-');
+	if (zero)
+		ft_pzero(zero);
+	ft_putstr_c(ft_itoa(value), 0);
+	if (space && s1.mins)
+		ft_pspace(space);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+/// The OLD FUNCTION
+/*
 void	ft_putdigit(va_list ap, struct s_flags s1,  char sep)
 {
 	char	*digit;
@@ -33,7 +86,7 @@ void	ft_putdigit(va_list ap, struct s_flags s1,  char sep)
 			value  = (unsigned int)value * -1;
 			digit = ft_itoa(value);
 			len = s1.prec > 0 ? ft_strlen(digit) : ft_strlen(digit) + 1;
-			if (!s1.prec || s1.prec == len || s1.width == (len + 1))
+			if (!s1.prec || s1.prec == len || s1.width == (len + 1) || (!s1.width && (!s1.prec || s1.prec < 0)))
 				ft_putchar('-');
 			j = -1;
 			if (len + 1 == s1.width && s1.prec == len)
@@ -74,6 +127,10 @@ void	ft_putdigit(va_list ap, struct s_flags s1,  char sep)
 		   ft_pspace(i);	
 	}
 }
+*/
+
+
+
 void	ft_putdigit_u(va_list ap, struct s_flags s1)
 {
 		char *digit;

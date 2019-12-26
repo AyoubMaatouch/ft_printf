@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 12:46:46 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/16 16:07:00 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/26 21:57:54 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static unsigned int	ft_alloc(unsigned int nb, int nbr)
 		i++;
 		nb /= 10;
 	}
-	if (nbr <= 0)
+	if (nbr == 0)
 		i++;
 	return (i);
 }
@@ -64,7 +64,7 @@ char			*ft_itoa(int n)
 	if (!(nbr_r = (char*)malloc(num_alloc * sizeof(char) + 1)))
 		return (NULL);
 	if (n < 0)
-		nbr_r[0] = '-';
+		nbr_r[0] = '\0';
 	ft_putnbr(n_nbr, nbr_r, num_alloc - 1);
 	nbr_r[num_alloc] = 0;
 	return (nbr_r);

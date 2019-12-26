@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 14:41:33 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/24 15:06:13 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/26 20:19:01 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ struct	s_flags {
 	va_list ap;
 	int i;
 	int mins;
+	int point;
 	int prec;
 	int zero;
 	int isempty;
