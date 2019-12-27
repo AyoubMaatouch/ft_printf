@@ -6,20 +6,20 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 12:46:46 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/26 21:57:54 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/27 21:11:49 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_isdigit(int str)
+int				ft_isdigit(int str)
 {
 	if (str >= 48 && str <= 57)
 		return (1);
 	return (0);
 }
 
-static unsigned int	ft_alloc(unsigned int nb, int nbr)
+unsigned int	ft_alloc(unsigned int nb, int nbr)
 {
 	int i;
 
@@ -36,7 +36,7 @@ static unsigned int	ft_alloc(unsigned int nb, int nbr)
 	return (i);
 }
 
-static void		ft_putnbr(unsigned int nb, char *nbr_r, unsigned int num_alloc)
+void			ft_putnbr(unsigned int nb, char *nbr_r, unsigned int num_alloc)
 {
 	while (nb > 9)
 	{
@@ -46,9 +46,6 @@ static void		ft_putnbr(unsigned int nb, char *nbr_r, unsigned int num_alloc)
 	}
 	nbr_r[num_alloc] = nb % 10 + 48;
 }
-
-
-
 
 char			*ft_itoa(int n)
 {
@@ -73,7 +70,7 @@ char			*ft_itoa(int n)
 char			*ft_itoa_u(unsigned int n)
 {
 	unsigned int	n_nbr;
-	unsigned int		num_alloc;
+	unsigned int	num_alloc;
 	char			*nbr_r;
 
 	n_nbr = n;

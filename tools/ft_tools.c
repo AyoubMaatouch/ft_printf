@@ -6,10 +6,9 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 12:42:37 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/18 15:05:43 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/27 21:38:25 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../ft_printf.h"
 
@@ -42,7 +41,7 @@ int		ft_atoi(const char *str)
 	return (number * sign);
 }
 
-int	ft_strlen(char *str)
+int		ft_strlen(char *str)
 {
 	size_t i;
 
@@ -52,7 +51,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-int	ft_final_len(char *s, struct s_flags s1)
+int		ft_final_len(char *s, struct s_flags s1)
 {
 	int len;
 
