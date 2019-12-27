@@ -34,7 +34,9 @@ void	ft_conv(const char *format, struct s_flags s1)
 				ft_puthex(s1.ap, format[i], s1);
 			else if (format[i] == 'p')
 				ft_puthex(s1.ap, 'p', s1);
-			else
+			else if (format[i] == '%')
+					ft_p(s1);
+			else 
 				ft_putchar(format[i]);
 			}
 		else

@@ -28,7 +28,7 @@ void	ft_putdigit(va_list ap, struct s_flags s1,  char sep)
 	{
 	value = va_arg(ap, int);
 	len = ft_strlen(ft_itoa(value));
-	if(s1.point && (s1.zero || s1.prec) && s1.prec > 0)
+	if(s1.point && s1.prec && s1.prec > 0 && s1.prec > len)
 			zero = s1.prec - len ;
 	if (s1.width)
 		{
@@ -40,7 +40,7 @@ void	ft_putdigit(va_list ap, struct s_flags s1,  char sep)
 			space = value >= 0 ? s1.width - (len) : s1.width - ((len + 1));
 		}
 
-	if (space && !s1.mins)
+	if (space > 0 && !s1.mins)
 		ft_pspace(space);
 	if (value < 0)
 		ft_putchar('-');
@@ -170,6 +170,29 @@ void	ft_putdigit_u(va_list ap, struct s_flags s1)
 		s1.width ? ft_putchar(' '): 0;
 	else
 		ft_putstr_c(ft_itoa_u(value), 0);
+	if (space && s1.mins)
+		ft_pspace(space);
+
+}
+
+void	ft_p(struct s_flags s1)
+{
+	int len = 0;
+	int zero = 0;
+	int space = 0;
+
+	len = 1;
+	if(s1.zero)
+			zero = s1.width - len ;
+	if (s1.width)
+		{
+			space = s1.width - len;
+		}
+	if (zero && !s1.mins)
+		ft_pzero(zero);
+	else if (space && !s1.mins)
+		ft_pspace(space);
+	ft_putchar('%');
 	if (space && s1.mins)
 		ft_pspace(space);
 

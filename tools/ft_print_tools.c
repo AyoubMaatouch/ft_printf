@@ -41,7 +41,6 @@ int ft_putstr_c(char *str, int index)
 			i++;
 			g_count++;
 		}
-		write(1, "\0", 1);
 	}
 	return (i);
 }

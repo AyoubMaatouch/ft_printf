@@ -14,7 +14,7 @@
 
 int ft_is_flag(char c)
 {
-	if (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i' || c == 'u' || c == 'x' || c == 'X')
+	if (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i' || c == 'u' || c == 'x' || c == 'X' || c == '%')
 		return (1);
 	return (0);
 }
@@ -31,7 +31,7 @@ struct s_flags ft_flag(char *format, struct s_flags s1, va_list ap)
 	s1.zero = 0;
 	s1.isempty = 0;
 	s1.point = 0;
-	if (format[i] == '-')
+	while (format[i] == '-')
 	{
 		s1.mins = 1;
 		i++;

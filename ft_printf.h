@@ -50,3 +50,5 @@ int		ft_putchar(char c);
 int 	ft_putstr_d(char *str, int index);
 void	ft_putdigit_u(va_list ap, struct s_flags s1);
 int		ft_putstr_s(char *str, int index, int width);
+int 	ft_is_flag(char c);
+void	ft_p(struct s_flags s1);

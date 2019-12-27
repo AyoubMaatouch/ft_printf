@@ -17,10 +17,11 @@
 int    main(void)
 
 {
+	char *s = "hello mother fucker";
 	int a = 0, b = 0;
-	a = ft_printf("|%10.p|", (void*)0x0);
+	a = ft_printf("|Bla bla %%%%%%%%%% %-5.*d| %*.*s",-10, 42, 20, 3, NULL);
 		puts("\n");
-	b = printf("|%10.p|",(void*)0x0);
+	b = printf("|Bla bla %%%%%%%%%% %-5.*d| %*.*s",-10, 42, 20, 3, NULL);
 	
 	printf ("\n|%d| |%d| ", a, b);
 //	printf("%s\n",ft_itoa_u(4294967295));
