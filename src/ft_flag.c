@@ -23,7 +23,6 @@ struct s_flags ft_flag(char *format, struct s_flags s1, va_list ap)
 {
 	int i;
 	int value;
-	int value_p;
 
 	i = 0;
 	s1.width = 0;
@@ -65,15 +64,11 @@ struct s_flags ft_flag(char *format, struct s_flags s1, va_list ap)
 	{
 		s1.point = 1;
 		if (!ft_isdigit(format[i - 1]) && format[i - 1] != '*' && !ft_isdigit(format[i + 1]) && format[i + 1] != '*')
-			s1.isempty = 1;
+			s1.prec = 0;
 		i++;
 		if (format[i] == '*')
 			{
-				value_p = va_arg(s1.ap, int);
-				if (value_p < 0)
-					s1.prec = -1;
-				else
-					s1.prec = value_p;
+				s1.prec = va_arg(s1.ap, int);
 				i++;
 			}
 		else if (ft_isdigit(format[i]) && ft_atoi(&format[i]))
@@ -84,7 +79,6 @@ struct s_flags ft_flag(char *format, struct s_flags s1, va_list ap)
 		}
 		else if (!ft_isdigit(format[i]) || ft_atoi(&format[i]) == 0)
 			{ 
-				s1.prec = -1;
 				if (!ft_is_flag(format[i]))
 					i++;
 			}

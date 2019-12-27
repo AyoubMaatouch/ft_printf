@@ -15,11 +15,12 @@
 #include "ft_printf.h"
 
 int    main(void)
+
 {
 	int a = 0, b = 0;
-	a = ft_printf("|%.10d|",-100);
+	a = ft_printf("|%.p|", NULL);
 		puts("\n");
-	b = printf("|%.10d|",-100);
+	b = printf("|%.p|",NULL);
 	
 	printf ("\n|%d| |%d| ", a, b);
 //	printf("%s\n",ft_itoa_u(4294967295));
