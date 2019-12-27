@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 13:55:30 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/26 22:09:25 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/27 22:22:23 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int ft_is_flag(char c)
 {
-	if (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i' || c == 'u' || c == 'x' || c == 'X' || c == '%')
+	if (c == 'c' || c == 's' || c == 'p' || c == 'd' ||
+			c == 'i' || c == 'u' || c == 'x' || c == 'X' || c == '%')
 		return (1);
 	return (0);
 }
@@ -67,10 +68,10 @@ struct s_flags ft_flag(char *format, struct s_flags s1, va_list ap)
 			s1.prec = 0;
 		i++;
 		if (format[i] == '*')
-			{
-				s1.prec = va_arg(s1.ap, int);
-				i++;
-			}
+		{
+			s1.prec = va_arg(s1.ap, int);
+			i++;
+		}
 		else if (ft_isdigit(format[i]) && ft_atoi(&format[i]))
 		{
 			s1.prec = ft_atoi(c_toa(format[i++]));
@@ -78,10 +79,10 @@ struct s_flags ft_flag(char *format, struct s_flags s1, va_list ap)
 				s1.prec = (s1.prec * 10) + ft_atoi(c_toa(format[i++]));
 		}
 		else if (!ft_isdigit(format[i]) || ft_atoi(&format[i]) == 0)
-			{ 
-				if (!ft_is_flag(format[i]))
-					i++;
-			}
+		{ 
+			if (!ft_is_flag(format[i]))
+				i++;
+		}
 	}
 	s1.i = i;
 	return (s1);
@@ -89,7 +90,7 @@ struct s_flags ft_flag(char *format, struct s_flags s1, va_list ap)
 
 int	ft_pspace(int value)
 {
-	 int i;
+	int i;
 
 	i = 0;
 	while (value > 0)

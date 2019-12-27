@@ -6,59 +6,64 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 15:10:42 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/25 15:45:48 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/27 22:08:30 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-#include <stdio.h>
+
 void	ft_char(va_list ap, struct s_flags s1)
 {
-    if (s1.width > 1 && s1.mins == 0)
-	ft_pspace(s1.width - 1);
-    //ft_putstr_c(c_toa(va_arg(ap, int)), s1.prec);
-    ft_putchar(va_arg(ap, int));
-    if (s1.width > 1 && s1.mins == 1)
-	ft_pspace(s1.width - 1);
+	if (s1.width > 1 && s1.mins == 0)
+		ft_pspace(s1.width - 1);
+	ft_putchar(va_arg(ap, int));
+	if (s1.width > 1 && s1.mins == 1)
+		ft_pspace(s1.width - 1);
 }
 
 void	ft_str(va_list ap, struct s_flags s1)
 {
+	int		len;
+	char	*s;
+	char	nu[6];
 
-    int len;
-    char *s;
-
-    len = 0;
-    s = va_arg(ap, char*);
-    if (!s)
-    {
-	if (!s1.width && !s1.point && !s1.prec && !s1.isempty)
-	    ft_putstr_c("(null)", 0);
-	else
-	{	
-	    len = ft_final_len("(null)", s1);
-	    if ((len) > 0 && s1.mins == 0)
-		ft_pspace(len);
-	    if ((s1.point && s1.prec) || (s1.width && !s1.point))
-	   	 s1.prec > 0? ft_putstr_c("(null)", s1.prec): ft_putstr_c("(null)", 0);
-		//ft_putstr_c("(null)", s1.prec);
-	    if ((len) > 0 && s1.mins == 1)
-		ft_pspace(len);
+	len = 0;
+	s = va_arg(ap, char*);
+	if (!s)
+	{
+		ft_memcpy(nu, "(null)", 6);
+		if (!s1.width && !s1.point && !s1.prec && !s1.isempty)
+			ft_putstr_c(nu, 0);
+		else
+		{
+			len = ft_final_len(nu, s1);
+			if ((len) > 0 && s1.mins == 0)
+				ft_pspace(len);
+			if ((s1.point && s1.prec) || (s1.width && !s1.point))
+				s1.prec > 0 ? ft_putstr_c(nu, s1.prec) : ft_putstr_c(nu, 0);
+			if ((len) > 0 && s1.mins == 1)
+				ft_pspace(len);
+		}
 	}
-    }
-    else
-    {
+	else
+		ft_print_str(s1, s);
+}
+
+void	ft_print_str(struct s_flags s1, char *s)
+{
+	int len;
+
+	len = 0;
 	if (!s1.width && !s1.point)
-	    ft_putstr_c(s, 0);
+		ft_putstr_c(s, 0);
 	else
 	{
-	    len = ft_final_len(s, s1);
-	    if ((len) > 0 && !s1.mins)
+		len = ft_final_len(s, s1);
+		if ((len) > 0 && !s1.mins)
 			ft_pspace(len);
 		if ((s1.point && s1.prec) || (s1.width && !s1.point))
-	   	 s1.prec > 0? ft_putstr_c(s, s1.prec): ft_putstr_c(s, 0);
-	    if ((len) > 0 && s1.mins)
+			s1.prec > 0 ? ft_putstr_c(s, s1.prec) : ft_putstr_c(s, 0);
+		if ((len) > 0 && s1.mins)
 			ft_pspace(len);
 	}
-    }
 }

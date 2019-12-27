@@ -6,41 +6,36 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 15:46:13 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/25 16:19:27 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/27 21:40:52 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-#include <stdio.h>
+
 void	ft_conv(const char *format, struct s_flags s1)
 {
-	int i;
-
-	i = 0;
-	while (format[i])
+	while (*format)
 	{
-		if (format[i] == '%')
+		if (*format == '%')
 		{
-			i++;
-			s1 = ft_flag((char*)format + i, s1, s1.ap);
-			i+= s1.i;
-			if (format[i] == 'c' || format[i] == 's')
-				format[i] == 'c' ? ft_char(s1.ap, s1) : ft_str(s1.ap, s1);
-			else if (format[i] == 'd' || format[i] == 'i')
+			format++;
+			s1 = ft_flag((char*)format, s1, s1.ap);
+			format += s1.i;
+			if (*format == 'c' || *format == 's')
+				*format == 'c' ? ft_char(s1.ap, s1) : ft_str(s1.ap, s1);
+			else if (*format == 'd' || *format == 'i')
 				ft_putdigit(s1.ap, s1, 'd');
-			else if (format[i] == 'u')
+			else if (*format == 'u')
 				ft_putdigit(s1.ap, s1, 'u');
-			else if (format[i] == 'x' || format[i] == 'X')
-				ft_puthex(s1.ap, format[i], s1);
-			else if (format[i] == 'p')
-				ft_puthex(s1.ap, 'p', s1);
-			else if (format[i] == '%')
-					ft_p(s1);
-			else 
-				ft_putchar(format[i]);
-			}
+			else if (*format == 'x' || *format == 'X' || *format == 'p')
+				ft_send_fo_ft(s1.ap, s1, *format);
+			else if (*format == '%')
+				ft_p(s1);
+			else
+				ft_putchar(*format);
+		}
 		else
-			ft_putchar(format[i]);
-	i++;
+			ft_putchar(*format);
+		format++;
 	}
 }
