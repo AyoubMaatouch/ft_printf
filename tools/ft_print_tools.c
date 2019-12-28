@@ -43,3 +43,29 @@ int		ft_putstr_c(char *str, int index)
 	}
 	return (i);
 }
+
+int	ft_pspace(int value)
+{
+	int i;
+
+	i = 0;
+	while (value > 0)
+	{
+		write(1, " ", 1);
+		i++;
+		g_count++;
+		value--;
+	}
+	return (i);
+}
+
+int	ft_pzero(int value)
+{
+	while (value > 0)
+	{
+		write(1, "0", 1);
+		g_count++;
+		value--;
+	}
+	return (1);
+}
