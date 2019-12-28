@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 12:48:31 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/27 21:33:38 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/28 17:54:16 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ char	*ft_rev(char *str, int p)
 	j = 0;
 	while (str[i])
 		i++;
-	rev = malloc(sizeof(char) * i + 3);
+	if (!(rev = malloc(sizeof(char) * i + 3)))
+		return (ft_error_check(NULL));
 	if (p)
 	{
 		rev[j++] = '0';
@@ -48,19 +49,17 @@ char	*ft_rev(char *str, int p)
 	while (i--)
 		rev[j++] = str[i];
 	rev[j] = '\0';
-	free(str);
 	return (rev);
 }
 
 char	*ft_hex(unsigned long nb, int maj, int p)
 {
-	char	*ret;
+	char	ret[21];
 	char	hex[16];
 	int		i;
 
 	i = 0;
 	ft_memcpy(hex, "0123456789abcdef", 16);
-	ret = malloc(sizeof(char) * 20 + 1);
 	while (nb >= 16)
 	{
 		if ((nb % 16) > 9 && maj == 32)

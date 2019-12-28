@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 14:41:33 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/28 04:28:18 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/28 17:54:56 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ struct			s_hex{
 	unsigned long	value;
 	char			*hex;
 };
-int				g_count;
+int				g_error;
+unsigned int	g_count;
 int				ft_printf(const char *format, ...);
 int				ft_atoi(const char *str);
 int				ft_isdigit(int str);
@@ -67,5 +68,6 @@ void			ft_put_u(struct s_flags s1, int space, int zero, int value);
 void			ft_put_d(struct s_flags s1, int space, int zero, int value);
 void			ft_output_xx(struct s_flags s1, struct s_hex h1);
 void			ft_output_p(struct s_flags s1, struct s_hex h1);
+void			*ft_error_check(char *str);
 
 #endif

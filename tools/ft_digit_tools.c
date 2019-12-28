@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 12:46:46 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/27 21:11:49 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/28 17:53:58 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char			*ft_itoa(int n)
 		n_nbr = n;
 	num_alloc = ft_alloc(n_nbr, n);
 	if (!(nbr_r = (char*)malloc(num_alloc * sizeof(char) + 1)))
-		return (NULL);
+		return (ft_error_check(NULL));
 	if (n < 0)
 		nbr_r[0] = '\0';
 	ft_putnbr(n_nbr, nbr_r, num_alloc - 1);
@@ -76,7 +76,7 @@ char			*ft_itoa_u(unsigned int n)
 	n_nbr = n;
 	num_alloc = ft_alloc(n, 1);
 	if (!(nbr_r = (char*)malloc(num_alloc * sizeof(char) + 1)))
-		return (NULL);
+		return (ft_error_check(NULL));
 	ft_putnbr(n_nbr, nbr_r, num_alloc - 1);
 	nbr_r[num_alloc] = 0;
 	return (nbr_r);

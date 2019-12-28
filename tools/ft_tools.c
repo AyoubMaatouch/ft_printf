@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 12:42:37 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/27 21:38:25 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/28 17:57:48 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,17 @@ char	*c_toa(char c)
 {
 	char *ret;
 
-	ret = malloc(sizeof(char) + 1);
+	if (!(ret = malloc(sizeof(char) + 1)))
+		return (ft_error_check(NULL));
 	ret[0] = c;
 	ret[1] = '\0';
 	return (ret);
+}
+
+void	*ft_error_check(char *str)
+{
+	g_error = 0;
+	if (!str)
+		g_error = 1;
+	return (0);
 }
