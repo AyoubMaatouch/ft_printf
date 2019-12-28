@@ -6,7 +6,7 @@
 /*   By: aymaatou <aymaatou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 12:45:08 by aymaatou          #+#    #+#             */
-/*   Updated: 2019/12/27 21:57:32 by aymaatou         ###   ########.fr       */
+/*   Updated: 2019/12/28 03:11:18 by aymaatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		ft_putstr_c(char *str, int index)
 	return (i);
 }
 
-int	ft_pspace(int value)
+void	ft_pspace(int value)
 {
 	int i;
 
@@ -56,10 +56,9 @@ int	ft_pspace(int value)
 		g_count++;
 		value--;
 	}
-	return (i);
 }
 
-int	ft_pzero(int value)
+void	ft_pzero(int value)
 {
 	while (value > 0)
 	{
@@ -67,5 +66,4 @@ int	ft_pzero(int value)
 		g_count++;
 		value--;
 	}
-	return (1);
 }
